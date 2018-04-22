@@ -1,0 +1,32 @@
+#删除一些没用的
+$ sudo apt-get remove libreoffice-common
+$ sudo apt-get remove unity-webapps-common
+$ sudo apt-get remove thunderbird totem rhythmbox simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca  gnome-sudoku onboard deja-dup
+$ sudo apt-get autoremove
+$ sudo apt-get autoclean
+
+#修改unbuntu源，换成中科大的
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list_bk
+$ sudo sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+$ sudo apt-get update
+
+#常用
+$ sudo apt-get install vim curl git unrar unity-tweak-tool zsh
+
+#美化
+#oh my zsh
+$ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+$ chsh -s /bin/zsh  #重启才生效
+#Flatabulous主题
+$ sudo add-apt-repository ppa:noobslab/themes
+$ sudo add-apt-repository ppa:noobslab/icons
+$ sudo apt-get update
+$ sudo apt-get install flatabulous-theme ultra-flat-icons  
+#安装完成后，打开unity-tweak-tool软件，修改主题和图标
+
+#npm nodejs 通过nvm安装
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | zsh
+$ export NVM_DIR="$HOME/.nvm"
+$ [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+$ nvm install v8.11.1
+$ nvm use v8.11.1
