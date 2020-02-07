@@ -8,7 +8,8 @@ $ sudo apt-get autoclean
 #修改unbuntu源，换成中科大的
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list_bk
 $ sudo sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
-$ sudo apt-get update
+#阿里云的
+#$ sudo sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 
 #常用
 $ sudo apt-get install vim curl git unrar unity-tweak-tool zsh
